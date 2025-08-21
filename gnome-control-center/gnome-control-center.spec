@@ -32,7 +32,7 @@ Summary:        Utilities to configure the GNOME desktop
 
 License:        GPL-2.0-or-later AND CC0-1.0
 URL:            https://gitlab.gnome.org/GNOME/gnome-control-center/
-Source0:        https://download.gnome.org/sources/%{name}/47/%{name}-%{tarball_version}.tar.xz
+Source0:        https://download.gnome.org/sources/%{name}/48/%{name}-%{tarball_version}.tar.xz
 
 Patch10: sound-Allow-volume-to-be-set-above-100.patch
 Patch11: Allow-tweaking-some-settings-for-Ubuntu-Dock.patch
