@@ -58,7 +58,7 @@ index da9ae1c..d153fe1 100644
  cc_sound_panel_init (CcSoundPanel *self)
  {
 @@ -336,8 +360,25 @@ cc_sound_panel_init (CcSoundPanel *self)
-   if (desktops && g_strv_contains ((const gchar * const *) desktops, "ubuntu")) {
+   if (desktops && g_strv_contains ((const gchar * const *) desktops, "GNOME")) {
      g_settings_bind (self->sound_settings, "allow-volume-above-100-percent",
                       self->allow_amplify_row, "active", G_SETTINGS_BIND_DEFAULT);
 +

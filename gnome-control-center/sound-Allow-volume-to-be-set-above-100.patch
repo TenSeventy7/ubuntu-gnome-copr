@@ -50,7 +50,7 @@ index 7acdcdb..da9ae1c 100644
 +  g_auto(GStrv) desktops = NULL;
 +  if (desktop_list)
 +    desktops = g_strsplit (desktop_list, ":", 0);
-+  if (desktops && g_strv_contains ((const gchar * const *) desktops, "ubuntu")) {
++  if (desktops && g_strv_contains ((const gchar * const *) desktops, "GNOME")) {
 +    g_settings_bind (self->sound_settings, "allow-volume-above-100-percent",
 +                     self->allow_amplify_row, "active", G_SETTINGS_BIND_DEFAULT);
 +  } else {
