@@ -2045,7 +2045,7 @@ index 0000000..8c964af
 +  if (desktop_list != NULL)
 +    desktops = g_strsplit (desktop_list, ":", -1);
 +
-+  if (desktops == NULL || !g_strv_contains ((const gchar * const *) desktops, "ubuntu")) {
++  if (desktops == NULL || !g_strv_contains ((const gchar * const *) desktops, "GNOME")) {
 +    application = CC_APPLICATION (g_application_get_default ());
 +    cc_shell_model_set_panel_visibility (cc_application_get_model (application),
 +                                         "GNOME",
