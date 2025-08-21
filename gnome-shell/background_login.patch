@@ -1,0 +1,50 @@
+From: =?utf-8?b?Ik1hcmNvIFRyZXZpc2FuIChUcmV2acOxbyki?= <mail@3v1n0.net>
+Date: Tue, 10 Sep 2019 13:13:14 +0100
+Subject: js/ui/background.js: Match theme login screen color
+
+This way the login animation will appear to expand over the login
+screen (system background) instead of suddenly replacing it.
+
+Original author: Didier Roche <didrocks@ubuntu.com>
+Original author: Daniel van Vugt <daniel.van.vugt@canonical.com>
+Author: Marco Trevisan <marco.trevisan@canonical.com>
+
+Last-Update: 2022-08-30
+Forwarded: not-needed
+---
+ js/ui/background.js | 13 ++++++++++++-
+ 1 file changed, 12 insertions(+), 1 deletion(-)
+
+diff --git a/js/ui/background.js b/js/ui/background.js
+index b0bf4a2..c02f344 100644
+--- a/js/ui/background.js
++++ b/js/ui/background.js
+@@ -100,8 +100,10 @@ import GObject from 'gi://GObject';
+ import GnomeBG from 'gi://GnomeBG';
+ import GnomeDesktop from 'gi://GnomeDesktop';
+ import Meta from 'gi://Meta';
++import St from 'gi://St';
+ import * as Signals from '../misc/signals.js';
+ 
++import * as Desktop from '../misc/desktop.js';
+ import * as LoginManager from '../misc/loginManager.js';
+ import * as Main from './main.js';
+ import * as Params from '../misc/params.js';
+@@ -537,7 +539,16 @@ export const SystemBackground = GObject.registerClass({
+     _init() {
+         if (_systemBackground == null) {
+             _systemBackground = new Meta.Background({meta_display: global.display});
+-            _systemBackground.set_color(DEFAULT_BACKGROUND_COLOR);
++
++            let backgroundColor = DEFAULT_BACKGROUND_COLOR;
++            if (Desktop.is('GNOME')) {
++                const dummyBgActor = new St.Widget({name: 'lockDialogGroup'});
++                Main.uiGroup.add_child(dummyBgActor);
++                backgroundColor = dummyBgActor.get_theme_node().get_background_color();
++                dummyBgActor.destroy();
++            }
++
++            _systemBackground.set_color(backgroundColor);
+         }
+ 
+         super._init({
