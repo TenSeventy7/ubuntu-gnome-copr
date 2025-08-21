@@ -2048,7 +2048,7 @@ index 0000000..8c964af
 +  if (desktops == NULL || !g_strv_contains ((const gchar * const *) desktops, "ubuntu")) {
 +    application = CC_APPLICATION (g_application_get_default ());
 +    cc_shell_model_set_panel_visibility (cc_application_get_model (application),
-+                                         "ubuntu",
++                                         "GNOME",
 +                                         CC_PANEL_HIDDEN);
 +  }
 +}
