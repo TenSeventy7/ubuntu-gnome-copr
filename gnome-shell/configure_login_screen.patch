@@ -126,7 +126,7 @@ index c02f344..ad0abca 100644
 @@ -542,7 +542,11 @@ export const SystemBackground = GObject.registerClass({
  
              let backgroundColor = DEFAULT_BACKGROUND_COLOR;
-             if (Desktop.is('ubuntu')) {
+             if (Desktop.is('GNOME')) {
 +                const loginSettings = new Gio.Settings({schema_id: 'com.ubuntu.login-screen'});
 +                const bgColor = loginSettings.get_string('background-color');
                  const dummyBgActor = new St.Widget({name: 'lockDialogGroup'});
