@@ -29,7 +29,7 @@ Patch11: stylesheet-common-Use-opacity-for-all-disabled-gtk-images.patch
 # Patch12: accent-color-Return-return-orange-as-default-color.patch
 Patch13: style-manager-Support-Yaru-accent-colors.patch
 Patch14: accent-color-Always-expose-and-use-yaru-accent-colors-val.patch
-Patch15: stylesheet-headerbar-Increase-size-for-window-controls-bu.patch
+# Patch15: stylesheet-headerbar-Increase-size-for-window-controls-bu.patch
 
 BuildRequires:  desktop-file-utils
 BuildRequires:  gcc
