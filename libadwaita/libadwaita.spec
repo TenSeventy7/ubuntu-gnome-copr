@@ -8,26 +8,21 @@
 }%{?-e:.%{-e*}}%{?-s:.%{-s*}}%{!?-n:%{?dist}}
 ## END: Set by rpmautospec
 
-%define package_name libadwaita
-
 %global apiver  1
 %global gtk_version 4.17.5
 %global glib_version 2.76.0
 
 %global tarball_version %%(echo %{version} | tr '~' '.')
 
-Name:           %{package_name}-ubuntu
-Version:        1.7.5
+Name:           libadwaita
+Version:        1.7.4
 Release:        %autorelease
-Summary:        Building blocks for modern GNOME applications (Ubuntu version)
-
-Provides:       libadwaita = %{version}-%{release}
-Obsoletes:      libadwaita <= %{version}-%{release}
+Summary:        Building blocks for modern GNOME applications
 
 # part of src/adw-spring-animation.c is MIT
 License:        LGPL-2.1-or-later AND MIT
 URL:            https://gitlab.gnome.org/GNOME/libadwaita
-Source0:        https://download.gnome.org/sources/%{package_name}/1.7/%{package_name}-%{tarball_version}.tar.xz
+Source0:        https://download.gnome.org/sources/%{name}/1.7/%{name}-%{tarball_version}.tar.xz
 
 Patch10: stylesheet-common-Use-disabled-opacity-for-disabled-pictu.patch
 Patch11: stylesheet-common-Use-opacity-for-all-disabled-gtk-images.patch
@@ -94,7 +89,7 @@ Demo files for %{name}.
 
 
 %prep
-%autosetup -p1 -n %{package_name}-%{tarball_version}
+%autosetup -p1 -n %{name}-%{tarball_version}
 
 
 %build
@@ -106,7 +101,7 @@ Demo files for %{name}.
 
 %install
 %meson_install
-%find_lang %{package_name}
+%find_lang %{name}
 
 
 %check
@@ -114,23 +109,23 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/*.xml
 desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 
 
-%files -f %{package_name}.lang
+%files -f %{name}.lang
 %license COPYING
 %doc README.md AUTHORS NEWS
 %{_bindir}/adwaita-%{apiver}-demo
-%{_libdir}/%{package_name}-%{apiver}.so.0*
+%{_libdir}/%{name}-%{apiver}.so.0*
 %{_libdir}/girepository-1.0/*.typelib
 
 %files devel
 %dir %{_datadir}/gir-1.0
 %{_datadir}/gir-1.0/*-%{apiver}.gir
-%{_datadir}/vala/vapi/%{package_name}-%{apiver}.*
-%{_includedir}/%{package_name}-%{apiver}/
-%{_libdir}/%{package_name}-%{apiver}.so
+%{_datadir}/vala/vapi/%{name}-%{apiver}.*
+%{_includedir}/%{name}-%{apiver}/
+%{_libdir}/%{name}-%{apiver}.so
 %{_libdir}/pkgconfig/*-%{apiver}.pc
 
 %files doc
-%{_docdir}/%{package_name}-%{apiver}/
+%{_docdir}/%{name}-%{apiver}/
 
 %files demo
 %{_datadir}/applications/*.desktop

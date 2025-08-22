@@ -2,7 +2,7 @@
 ## (rpmautospec version 0.8.1)
 ## RPMAUTOSPEC: autorelease, autochangelog
 %define autorelease(e:s:pb:n) %{?-p:0.}%{lua:
-    release_number = 1;
+    release_number = 23;
     base_release_number = tonumber(rpm.expand("%{?-b*}%{!?-b:1}"));
     print(release_number + base_release_number - 1);
 }%{?-e:.%{-e*}}%{?-s:.%{-s*}}%{!?-n:%{?dist}}
@@ -19,24 +19,20 @@
 %define gnome_bluetooth_version 42~alpha
 %define libadwaita_version 1.7~alpha
 %define nm_version 1.24.0
-%define package_name gnome-control-center
 
 %global tarball_version %%(echo %{version} | tr '~' '.')
 
 # Disable parental control for RHEL builds
 %bcond malcontent %[!0%{?rhel}]
 
-Name:           %{package_name}-ubuntu
+Name:           gnome-control-center
 Version:        48.3
 Release:        %autorelease
-Summary:        Utilities to configure the GNOME desktop (Ubuntu version)
+Summary:        Utilities to configure the GNOME desktop
 
 License:        GPL-2.0-or-later AND CC0-1.0
 URL:            https://gitlab.gnome.org/GNOME/gnome-control-center/
-Source0:        https://download.gnome.org/sources/%{package_name}/48/%{package_name}-%{tarball_version}.tar.xz
-
-Provides:       gnome-control-center = %{version}-%{release}
-Obsoletes:      gnome-control-center <= %{version}-%{release}
+Source0:        https://download.gnome.org/sources/%{name}/48/%{name}-%{tarball_version}.tar.xz
 
 Patch10: sound-Allow-volume-to-be-set-above-100.patch
 Patch11: Allow-tweaking-some-settings-for-Ubuntu-Dock.patch
@@ -170,10 +166,6 @@ BuildArch: noarch
 Provides: control-center-filesystem = 1:%{version}-%{release}
 Obsoletes: control-center-filesystem < 1:%{version}-%{release}
 
-Provides:       gnome-control-center-filesystem = %{version}-%{release}
-Obsoletes:      gnome-control-center-filesystem <= %{version}-%{release}
-Conflicts:      gnome-control-center-filesystem
-
 %description filesystem
 The GNOME control-center provides a number of extension points
 for applications. This package contains directories where applications
@@ -181,7 +173,7 @@ can install configuration files that are picked up by the control-center
 utilities.
 
 %prep
-%autosetup -p1 -n %{package_name}-%{tarball_version}
+%autosetup -p1 -n %{name}-%{tarball_version}
 
 %build
 %meson \
@@ -213,9 +205,9 @@ mkdir -p $RPM_BUILD_ROOT%{_datadir}/gnome/wm-properties
 rm -rf $RPM_BUILD_ROOT%{_datadir}/gnome/autostart
 rm -rf $RPM_BUILD_ROOT%{_datadir}/gnome/cursor-fonts
 
-%find_lang %{package_name} --all-name --with-gnome
+%find_lang %{name} --all-name --with-gnome
 
-%files -f %{package_name}.lang
+%files -f %{name}.lang
 %license COPYING
 %doc NEWS README.md
 %{_bindir}/gnome-control-center
