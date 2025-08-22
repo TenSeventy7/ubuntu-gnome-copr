@@ -1,0 +1,51 @@
+From: =?utf-8?b?Ik1hcmNvIFRyZXZpc2FuIChUcmV2acOxbyki?= <mail@3v1n0.net>
+Date: Tue, 15 Apr 2025 18:43:26 +0200
+Subject: stylesheet/headerbar: Increase size for window controls button
+ images
+
+Respect the size that we use in GTK to be consistent
+
+Bug-Ubuntu: https://bugs.launchpad.net/ubuntu/+source/libadwaita-1/+bug/2106784
+---
+ src/stylesheet/widgets/_header-bar.scss | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+
+diff --git a/src/stylesheet/widgets/_header-bar.scss b/src/stylesheet/widgets/_header-bar.scss
+index a44af21..ab6acc2 100644
+--- a/src/stylesheet/widgets/_header-bar.scss
++++ b/src/stylesheet/widgets/_header-bar.scss
+@@ -65,6 +65,20 @@ headerbar {
+   }
+ }
+ 
++@if $is_yaru {
++  // Optimize the size of the window buttons for Yaru look.
++  headerbar {
++    &.default-decoration {
++      windowcontrols {
++        > button {
++          min-height: 20px;
++          min-width: 20px;
++        }
++      }
++    }
++  }
++}
++
+ window:not(.ssd-frame) > {
+   .titlebar:not(.flat) {
+     box-shadow: 0 1px if($contrast == 'high', $border_color, color-mix(in srgb, var(--headerbar-shade-color) 50%, transparent)),
+@@ -188,6 +202,13 @@ windowcontrols {
+   }
+ }
+ 
++@if $is_yaru {
++  windowcontrols button > image {
++    min-width: 20px;
++    min-height: 20px;
++  }
++}
++
+ /******************
+  * AdwWindowTitle *
+  ******************/
