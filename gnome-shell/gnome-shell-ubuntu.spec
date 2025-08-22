@@ -28,8 +28,8 @@ License:        GPL-2.0-or-later
 URL:            https://wiki.gnome.org/Projects/GnomeShell
 Source0:        https://download.gnome.org/sources/gnome-shell/%{major_version}/%{package_name}-%{tarball_version}.tar.xz
 
-Provides:       gnome-shell = %autorelease
-Obsoletes:      gnome-shell <= %autorelease
+Provides:       gnome-shell = %{version}-%{release}
+Obsoletes:      gnome-shell <= %{version}-%{release}
 Conflicts:      gnome-shell
 
 # Replace Epiphany with Firefox in the default favourite apps list

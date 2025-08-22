@@ -17,12 +17,12 @@
 %global tarball_version %%(echo %{version} | tr '~' '.')
 
 Name:           %{package_name}-ubuntu
-Version:        1.7.4
+Version:        1.7.5
 Release:        %autorelease
 Summary:        Building blocks for modern GNOME applications (Ubuntu version)
 
-Provides:       libadwaita = %autorelease
-Obsoletes:      libadwaita <= %autorelease
+Provides:       libadwaita = %{version}-%{release}
+Obsoletes:      libadwaita <= %{version}-%{release}
 Conflicts:      libadwaita
 
 # part of src/adw-spring-animation.c is MIT

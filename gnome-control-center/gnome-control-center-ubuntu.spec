@@ -35,8 +35,8 @@ License:        GPL-2.0-or-later AND CC0-1.0
 URL:            https://gitlab.gnome.org/GNOME/gnome-control-center/
 Source0:        https://download.gnome.org/sources/%{package_name}/48/%{package_name}-%{tarball_version}.tar.xz
 
-Provides:       gnome-control-center = %autorelease
-Obsoletes:      gnome-control-center <= %autorelease
+Provides:       gnome-control-center = %{version}-%{release}
+Obsoletes:      gnome-control-center <= %{version}-%{release}
 Conflicts:      gnome-control-center
 
 Patch10: sound-Allow-volume-to-be-set-above-100.patch
@@ -170,6 +170,10 @@ BuildArch: noarch
 # Renamed in F28
 Provides: control-center-filesystem = 1:%{version}-%{release}
 Obsoletes: control-center-filesystem < 1:%{version}-%{release}
+
+Provides:       gnome-control-center-filesystem = %{version}-%{release}
+Obsoletes:      gnome-control-center-filesystem <= %{version}-%{release}
+Conflicts:      gnome-control-center-filesystem
 
 %description filesystem
 The GNOME control-center provides a number of extension points
