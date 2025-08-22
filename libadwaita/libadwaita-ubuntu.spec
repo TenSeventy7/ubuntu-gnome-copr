@@ -14,10 +14,14 @@
 
 %global tarball_version %%(echo %{version} | tr '~' '.')
 
-Name:           libadwaita
+Name:           libadwaita-ubuntu
 Version:        1.7.4
 Release:        %autorelease
-Summary:        Building blocks for modern GNOME applications
+Summary:        Building blocks for modern GNOME applications (Ubuntu version)
+
+Provides:       libadwaita = %autorelease
+Obsoletes:      libadwaita <= %autorelease
+Conflicts:      libadwaita
 
 # part of src/adw-spring-animation.c is MIT
 License:        LGPL-2.1-or-later AND MIT

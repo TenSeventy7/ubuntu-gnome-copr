@@ -2,7 +2,7 @@
 ## (rpmautospec version 0.8.1)
 ## RPMAUTOSPEC: autorelease, autochangelog
 %define autorelease(e:s:pb:n) %{?-p:0.}%{lua:
-    release_number = 23;
+    release_number = 1;
     base_release_number = tonumber(rpm.expand("%{?-b*}%{!?-b:1}"));
     print(release_number + base_release_number - 1);
 }%{?-e:.%{-e*}}%{?-s:.%{-s*}}%{!?-n:%{?dist}}
@@ -25,14 +25,18 @@
 # Disable parental control for RHEL builds
 %bcond malcontent %[!0%{?rhel}]
 
-Name:           gnome-control-center
+Name:           gnome-control-center-ubuntu
 Version:        48.3
 Release:        %autorelease
-Summary:        Utilities to configure the GNOME desktop
+Summary:        Utilities to configure the GNOME desktop (Ubuntu version)
 
 License:        GPL-2.0-or-later AND CC0-1.0
 URL:            https://gitlab.gnome.org/GNOME/gnome-control-center/
 Source0:        https://download.gnome.org/sources/%{name}/48/%{name}-%{tarball_version}.tar.xz
+
+Provides:       gnome-control-center = %autorelease
+Obsoletes:      gnome-control-center <= %autorelease
+Conflicts:      gnome-control-center
 
 Patch10: sound-Allow-volume-to-be-set-above-100.patch
 Patch11: Allow-tweaking-some-settings-for-Ubuntu-Dock.patch
