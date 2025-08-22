@@ -41,7 +41,7 @@ index e9e660b..6519b82 100644
              Scripting.runPerfScript(perfModule, perfOutput);
          }
 +
-+        if (!screenShield?.locked && Desktop.is('ubuntu')) {
++        if (!screenShield?.locked && Desktop.is('GNOME')) {
 +            const settings = new Gio.Settings({
 +                schema_id: 'org.gnome.shell.ubuntu',
 +            });
