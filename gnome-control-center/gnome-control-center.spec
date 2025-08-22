@@ -2,7 +2,7 @@
 ## (rpmautospec version 0.8.1)
 ## RPMAUTOSPEC: autorelease, autochangelog
 %define autorelease(e:s:pb:n) %{?-p:0.}%{lua:
-    release_number = 10;
+    release_number = 11;
     base_release_number = tonumber(rpm.expand("%{?-b*}%{!?-b:1}"));
     print(release_number + base_release_number - 1);
 }%{?-e:.%{-e*}}%{?-s:.%{-s*}}%{!?-n:%{?dist}}
@@ -40,7 +40,7 @@ Patch12: multitasking-panel-Sync-workspace-and-monitor-isolation-d.patch
 Patch13: multitasking-panel-Sync-workspace-isolation-setting-on-ti.patch
 Patch14: lock-Add-Lock-Screen-on-Suspend-option.patch
 Patch15: online-accounts-sort.patch
-Patch16: background-Update-legacy-theme-settings-matching-the-acce.patch
+#Patch16: background-Update-legacy-theme-settings-matching-the-acce.patch
 Patch17: sound-Add-toggle-for-the-startup-sound.patch
 
 BuildRequires:  desktop-file-utils
