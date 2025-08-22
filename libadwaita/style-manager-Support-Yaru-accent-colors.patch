@@ -194,21 +194,21 @@ index e4a6947..df971c3 100644
 +  else if (g_str_equal (yaru_accent, "bark"))
 +    rgba_hex = 0x787859;
 +  else if (g_str_equal (yaru_accent, "sage"))
-+    rgba_hex = 0x657b69;
++    rgba_hex = 0x6f8396;
 +  else if (g_str_equal (yaru_accent, "olive"))
-+    rgba_hex = 0x4b8501;
++    rgba_hex = 0x3a944a;
 +  else if (g_str_equal (yaru_accent, "viridian"))
 +    rgba_hex = 0x03875b;
 +  else if (g_str_equal (yaru_accent, "prussiangreen"))
-+    rgba_hex = 0x308280;
++    rgba_hex = 0x2190a4;
 +  else if (g_str_equal (yaru_accent, "blue"))
-+    rgba_hex = 0x0073e5;
++    rgba_hex = 0x3584e4;
 +  else if (g_str_equal (yaru_accent, "purple"))
-+    rgba_hex = 0x7764d8;
++    rgba_hex = 0x9141ac;
 +  else if (g_str_equal (yaru_accent, "magenta"))
-+    rgba_hex = 0xb34cb3;
++    rgba_hex = 0xd56199;
 +  else if (g_str_equal (yaru_accent, "red"))
-+    rgba_hex = 0xda3450;
++    rgba_hex = 0xe62d42;
 +  else if (g_str_equal (yaru_accent, "yellow"))
 +    rgba_hex = 0xc88800;
 +
@@ -1222,21 +1222,21 @@ index 0000000..74f2e02
 +@function get_accent_color($accent_color, $is_dark: false) {
 +    $color: null;
 +    @if $accent_color == 'default' {
-+        $color: #E95420;
++        $color: #ed5b00;
 +    } @else if $accent_color == 'sage' {
-+        $color: #657B69;
++        $color: #6f8396;
 +    } @else if $accent_color == 'olive' {
-+        $color: #4B8501;
++        $color: #3a944a;
 +    } @else if $accent_color == 'prussiangreen' {
-+        $color: #308280;
++        $color: #2190a4;
 +    } @else if $accent_color == 'blue' {
-+        $color: #0073E5;
++        $color: #3584e4;
 +    } @else if $accent_color == 'purple' {
-+        $color: #7764D8;
++        $color: #9141ac;
 +    } @else if $accent_color == 'magenta' {
-+        $color: #B34CB3;
++        $color: #d56199;
 +    } @else if $accent_color == 'red' {
-+        $color: #DA3450;
++        $color: #e62d42;
 +    } @else if $accent_color == 'yellow' {
 +        $color: #C88800;
 +    } @else {

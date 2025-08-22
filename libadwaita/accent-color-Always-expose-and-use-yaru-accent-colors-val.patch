@@ -51,31 +51,31 @@ index fa937aa..89abce0 100644
 +    {
 +      switch (self) {
 +      case ADW_ACCENT_COLOR_BLUE:
-+        hex = "#0073e5";
++        hex = "#3584e4";
 +        break;
 +      case ADW_ACCENT_COLOR_TEAL:
-+        hex = "#308280";
++        hex = "#2190a4";
 +        break;
 +      case ADW_ACCENT_COLOR_GREEN:
-+        hex = "#4b8501";
++        hex = "#3a944a";
 +        break;
 +      case ADW_ACCENT_COLOR_YELLOW:
 +        hex = "#c88800";
 +        break;
 +      case ADW_ACCENT_COLOR_ORANGE:
-+        hex = "#e95420";
++        hex = "#ed5b00";
 +        break;
 +      case ADW_ACCENT_COLOR_RED:
-+        hex = "#da3450";
++        hex = "#e62d42";
 +        break;
 +      case ADW_ACCENT_COLOR_PINK:
-+        hex = "#b34cb3";
++        hex = "#d56199";
 +        break;
 +      case ADW_ACCENT_COLOR_PURPLE:
-+        hex = "#7764d8";
++        hex = "#9141ac";
 +        break;
 +      case ADW_ACCENT_COLOR_SLATE:
-+        hex = "#657b69";
++        hex = "#6f8396";
 +        break;
 +      default:
 +        g_assert_not_reached ();
@@ -98,14 +98,14 @@ index 9c05c7f..38ad366 100644
    $link_visited_color: var(--yaru-link-visited-color);
 +
 +  :root {
-+    --accent-blue: #0073e5;
-+    --accent-teal: #308280;
-+    --accent-green: #4b8501;
++    --accent-blue: #3584e4;
++    --accent-teal: #2190a4;
++    --accent-green: #3a944a;
 +    --accent-yellow: #c88800;
-+    --accent-orange: #e95420;
-+    --accent-red: #da3450;
-+    --accent-pink: #b34cb3;
-+    --accent-purple: #7764d8;
-+    --accent-slate: #657b69;
++    --accent-orange: #ed5b00;
++    --accent-red: #e62d42;
++    --accent-pink: #d56199;
++    --accent-purple: #9141ac;
++    --accent-slate: #6f8396;
 +  }
  }
