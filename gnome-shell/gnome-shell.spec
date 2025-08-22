@@ -2,7 +2,7 @@
 ## (rpmautospec version 0.8.1)
 ## RPMAUTOSPEC: autorelease, autochangelog
 %define autorelease(e:s:pb:n) %{?-p:0.}%{lua:
-    release_number = 10;
+    release_number = 11;
     base_release_number = tonumber(rpm.expand("%{?-b*}%{!?-b:1}"));
     print(release_number + base_release_number - 1);
 }%{?-e:.%{-e*}}%{?-s:.%{-s*}}%{!?-n:%{?dist}}
@@ -38,14 +38,14 @@ Patch21: shell-app-Warn-instead-of-crashing-if-disposed-before-sta.patch
 Patch22: desktop_detect.patch
 Patch23: lock_on_suspend.patch
 Patch24: background_login.patch
-Patch25: gdm_alternatives.patch
-Patch26: resolve_alternate_theme_path.patch
+#Patch25: gdm_alternatives.patch
+#Patch26: resolve_alternate_theme_path.patch
 Patch27: configure_login_screen.patch
 Patch28: layout-Try-to-allocate-before-getting-size-of-tracke.patch
-Patch29: sessionMode-Add-support-for-configuring-an-icons-resource.patch
-Patch30: main-Support-ubuntu-color-scheme-and-yaru-variants.patch
-Patch31: st-them-context-Use-yaru-colors-as-accents.patch
-Patch32: darkMode-Add-support-to-Yaru-theme-color-variants.patch
+#Patch29: sessionMode-Add-support-for-configuring-an-icons-resource.patch
+#Patch30: main-Support-ubuntu-color-scheme-and-yaru-variants.patch
+#Patch31: st-them-context-Use-yaru-colors-as-accents.patch
+#Patch32: darkMode-Add-support-to-Yaru-theme-color-variants.patch
 Patch33: main-Add-support-for-playing-a-startup-sound-if-enabled-i.patch
 
 %define eds_version 3.45.1
