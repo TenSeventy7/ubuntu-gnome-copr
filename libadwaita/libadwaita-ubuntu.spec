@@ -95,7 +95,7 @@ Demo files for %{name}.
 
 
 %prep
-%autosetup -p1 -n %{name}-%{tarball_version}
+%autosetup -p1 -n %{package_name}-%{tarball_version}
 
 
 %build

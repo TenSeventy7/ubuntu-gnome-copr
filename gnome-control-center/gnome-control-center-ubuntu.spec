@@ -178,7 +178,7 @@ can install configuration files that are picked up by the control-center
 utilities.
 
 %prep
-%autosetup -p1 -n %{name}-%{tarball_version}
+%autosetup -p1 -n %{package_name}-%{tarball_version}
 
 %build
 %meson \

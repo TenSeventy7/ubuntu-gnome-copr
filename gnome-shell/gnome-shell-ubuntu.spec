@@ -215,7 +215,7 @@ BuildArch: noarch
 %{summary}
 
 %prep
-%autosetup -S git -n %{name}-%{tarball_version}
+%autosetup -S git -n %{package_name}-%{tarball_version}
 
 %build
 %meson \
