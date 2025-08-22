@@ -23,7 +23,6 @@ Summary:        Building blocks for modern GNOME applications (Ubuntu version)
 
 Provides:       libadwaita = %{version}-%{release}
 Obsoletes:      libadwaita <= %{version}-%{release}
-Conflicts:      libadwaita
 
 # part of src/adw-spring-animation.c is MIT
 License:        LGPL-2.1-or-later AND MIT

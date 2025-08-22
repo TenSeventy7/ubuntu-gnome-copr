@@ -30,7 +30,6 @@ Source0:        https://download.gnome.org/sources/gnome-shell/%{major_version}/
 
 Provides:       gnome-shell = %{version}-%{release}
 Obsoletes:      gnome-shell <= %{version}-%{release}
-Conflicts:      gnome-shell
 
 # Replace Epiphany with Firefox in the default favourite apps list
 Patch10: gnome-shell-favourite-apps-firefox.patch

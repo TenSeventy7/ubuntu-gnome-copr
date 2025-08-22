@@ -37,7 +37,6 @@ Source0:        https://download.gnome.org/sources/%{package_name}/48/%{package_
 
 Provides:       gnome-control-center = %{version}-%{release}
 Obsoletes:      gnome-control-center <= %{version}-%{release}
-Conflicts:      gnome-control-center
 
 Patch10: sound-Allow-volume-to-be-set-above-100.patch
 Patch11: Allow-tweaking-some-settings-for-Ubuntu-Dock.patch
