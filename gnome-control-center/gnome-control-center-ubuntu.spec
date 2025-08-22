@@ -210,9 +210,9 @@ mkdir -p $RPM_BUILD_ROOT%{_datadir}/gnome/wm-properties
 rm -rf $RPM_BUILD_ROOT%{_datadir}/gnome/autostart
 rm -rf $RPM_BUILD_ROOT%{_datadir}/gnome/cursor-fonts
 
-%find_lang %{name} --all-name --with-gnome
+%find_lang %{package_name} --all-name --with-gnome
 
-%files -f %{name}.lang
+%files -f %{package_name}.lang
 %license COPYING
 %doc NEWS README.md
 %{_bindir}/gnome-control-center

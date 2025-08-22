@@ -107,7 +107,7 @@ Demo files for %{name}.
 
 %install
 %meson_install
-%find_lang %{name}
+%find_lang %{package_name}
 
 
 %check
@@ -115,23 +115,23 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/*.xml
 desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 
 
-%files -f %{name}.lang
+%files -f %{package_name}.lang
 %license COPYING
 %doc README.md AUTHORS NEWS
 %{_bindir}/adwaita-%{apiver}-demo
-%{_libdir}/%{name}-%{apiver}.so.0*
+%{_libdir}/%{package_name}-%{apiver}.so.0*
 %{_libdir}/girepository-1.0/*.typelib
 
 %files devel
 %dir %{_datadir}/gir-1.0
 %{_datadir}/gir-1.0/*-%{apiver}.gir
-%{_datadir}/vala/vapi/%{name}-%{apiver}.*
-%{_includedir}/%{name}-%{apiver}/
-%{_libdir}/%{name}-%{apiver}.so
+%{_datadir}/vala/vapi/%{package_name}-%{apiver}.*
+%{_includedir}/%{package_name}-%{apiver}/
+%{_libdir}/%{package_name}-%{apiver}.so
 %{_libdir}/pkgconfig/*-%{apiver}.pc
 
 %files doc
-%{_docdir}/%{name}-%{apiver}/
+%{_docdir}/%{package_name}-%{apiver}/
 
 %files demo
 %{_datadir}/applications/*.desktop

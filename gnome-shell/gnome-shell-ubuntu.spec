@@ -235,7 +235,7 @@ BuildArch: noarch
 mkdir -p %{buildroot}%{_datadir}/gnome-shell/extensions
 mkdir -p %{buildroot}%{_datadir}/gnome-shell/search-providers
 
-%find_lang %{name}
+%find_lang %{package_name}
 
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/org.gnome.Shell.desktop
@@ -245,7 +245,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.gnome.Shell.Exten
 desktop-file-validate %{buildroot}%{_datadir}/applications/org.gnome.Shell.PortalHelper.desktop
 %endif
 
-%files -f %{name}.lang
+%files -f %{package_name}.lang
 %license COPYING
 %doc NEWS README.md
 %{_bindir}/gnome-shell
