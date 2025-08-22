@@ -8,6 +8,8 @@
 }%{?-e:.%{-e*}}%{?-s:.%{-s*}}%{!?-n:%{?dist}}
 ## END: Set by rpmautospec
 
+%define package_name gnome-shell
+
 %global tarball_version %%(echo %{version} | tr '~' '.')
 %global major_version %%(cut -d "." -f 1 <<<%{tarball_version})
 
@@ -17,14 +19,14 @@
 %global portal_helper 1
 %endif
 
-Name:           gnome-shell-ubuntu
+Name:           %{package_name}-ubuntu
 Version:        48.4
 Release:        %autorelease
 Summary:        Window management and application launching for GNOME (Ubuntu version)
 
 License:        GPL-2.0-or-later
 URL:            https://wiki.gnome.org/Projects/GnomeShell
-Source0:        https://download.gnome.org/sources/gnome-shell/%{major_version}/%{name}-%{tarball_version}.tar.xz
+Source0:        https://download.gnome.org/sources/gnome-shell/%{major_version}/%{package_name}-%{tarball_version}.tar.xz
 
 Provides:       gnome-shell = %autorelease
 Obsoletes:      gnome-shell <= %autorelease

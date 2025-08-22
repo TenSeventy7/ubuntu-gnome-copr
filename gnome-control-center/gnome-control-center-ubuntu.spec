@@ -19,20 +19,21 @@
 %define gnome_bluetooth_version 42~alpha
 %define libadwaita_version 1.7~alpha
 %define nm_version 1.24.0
+%define package_name gnome-control-center
 
 %global tarball_version %%(echo %{version} | tr '~' '.')
 
 # Disable parental control for RHEL builds
 %bcond malcontent %[!0%{?rhel}]
 
-Name:           gnome-control-center-ubuntu
+Name:           %{package_name}-ubuntu
 Version:        48.3
 Release:        %autorelease
 Summary:        Utilities to configure the GNOME desktop (Ubuntu version)
 
 License:        GPL-2.0-or-later AND CC0-1.0
 URL:            https://gitlab.gnome.org/GNOME/gnome-control-center/
-Source0:        https://download.gnome.org/sources/%{name}/48/%{name}-%{tarball_version}.tar.xz
+Source0:        https://download.gnome.org/sources/%{package_name}/48/%{package_name}-%{tarball_version}.tar.xz
 
 Provides:       gnome-control-center = %autorelease
 Obsoletes:      gnome-control-center <= %autorelease

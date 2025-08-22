@@ -8,13 +8,15 @@
 }%{?-e:.%{-e*}}%{?-s:.%{-s*}}%{!?-n:%{?dist}}
 ## END: Set by rpmautospec
 
+%define package_name libadwaita
+
 %global apiver  1
 %global gtk_version 4.17.5
 %global glib_version 2.76.0
 
 %global tarball_version %%(echo %{version} | tr '~' '.')
 
-Name:           libadwaita-ubuntu
+Name:           %{package_name}-ubuntu
 Version:        1.7.4
 Release:        %autorelease
 Summary:        Building blocks for modern GNOME applications (Ubuntu version)
@@ -26,7 +28,7 @@ Conflicts:      libadwaita
 # part of src/adw-spring-animation.c is MIT
 License:        LGPL-2.1-or-later AND MIT
 URL:            https://gitlab.gnome.org/GNOME/libadwaita
-Source0:        https://download.gnome.org/sources/%{name}/1.7/%{name}-%{tarball_version}.tar.xz
+Source0:        https://download.gnome.org/sources/%{package_name}/1.7/%{package_name}-%{tarball_version}.tar.xz
 
 Patch10: stylesheet-common-Use-disabled-opacity-for-disabled-pictu.patch
 Patch11: stylesheet-common-Use-opacity-for-all-disabled-gtk-images.patch
