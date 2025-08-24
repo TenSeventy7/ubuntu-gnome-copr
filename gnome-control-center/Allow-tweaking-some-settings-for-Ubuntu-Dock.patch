@@ -2320,7 +2320,7 @@ index 0000000..ee93bc0
 +Name=Desktop
 +Comment=Desktop Appearance Settings
 +Exec=gnome-control-center ubuntu
-+Icon=emoji-nature
++Icon=view-grid-symbolic
 +Terminal=false
 +Type=Application
 +NoDisplay=true
