@@ -902,7 +902,7 @@ index 0000000..8c964af
 +
 +  update_extension_widgets (GTK_WIDGET (self->ding_preferences_group),
 +                            GTK_WIDGET (self->ding_switch),
-+                            DING_UUID, ding_state, FALSE);
++                            DING_UUID, ding_state, TRUE);
 +
 +  update_extension_widgets (GTK_WIDGET (self->dock_preferences_group),
 +                            GTK_WIDGET (self->dock_switch),
