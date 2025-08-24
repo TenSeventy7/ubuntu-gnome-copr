@@ -1087,12 +1087,6 @@ index 0000000..8c964af
 +  if (is_extension_disabled (self, DING_UUID))
 +    extension_enabled = FALSE;
 +
-+  if (!extension_enabled &&
-+      !gtk_widget_is_visible (GTK_WIDGET (self->ding_switch)))
-+    {
-+      gtk_widget_set_visible (GTK_WIDGET (self->ding_switch), TRUE);
-+    }
-+
 +  gtk_switch_set_active (self->ding_switch, extension_enabled);
 +}
 +
