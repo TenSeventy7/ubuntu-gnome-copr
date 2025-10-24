@@ -2,7 +2,7 @@
 ## (rpmautospec version 0.8.1)
 ## RPMAUTOSPEC: autorelease, autochangelog
 %define autorelease(e:s:pb:n) %{?-p:0.}%{lua:
-    release_number = 11;
+    release_number = 10;
     base_release_number = tonumber(rpm.expand("%{?-b*}%{!?-b:1}"));
     print(release_number + base_release_number - 1);
 }%{?-e:.%{-e*}}%{?-s:.%{-s*}}%{!?-n:%{?dist}}
@@ -15,7 +15,7 @@
 %global tarball_version %%(echo %{version} | tr '~' '.')
 
 Name:           libadwaita
-Version:        1.7.5
+Version:        1.7.7
 Release:        %autorelease
 Summary:        Building blocks for modern GNOME applications
 
