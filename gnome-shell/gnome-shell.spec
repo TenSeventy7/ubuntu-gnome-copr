@@ -33,7 +33,7 @@ Patch10: gnome-shell-favourite-apps-firefox.patch
 # downstream patch to stop trying on configuration errors.
 Patch11: 0001-gdm-Work-around-failing-fingerprint-auth.patch
 
-Patch20: st-theme-node-Forget-properties-cache-on-stylesheet-chang.patch
+#Patch20: st-theme-node-Forget-properties-cache-on-stylesheet-chang.patch
 Patch21: shell-app-Warn-instead-of-crashing-if-disposed-before-sta.patch
 Patch22: desktop_detect.patch
 Patch23: lock_on_suspend.patch
